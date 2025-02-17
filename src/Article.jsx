@@ -1,12 +1,14 @@
-export const Articles = ({ topic, title, article_id, author, article_img }) => {
-  return (
-    <div className="all-articles-container" key={article_id}>
-      <h4>
-        {topic}: {title}
-      </h4>
+export const Articles = ({ articles }) => {
+  return articles.map((article) => {
+    return (
+      <div className="all-articles-container" key={article.article_id}>
+        <h4>
+          {article.topic}: {article.title}
+        </h4>
 
-      <img src={article_img} alt="" />
-      <h6>Posted By: {author}</h6>
-    </div>
-  );
+        <img src={article.article_img_url} alt="" />
+        <h6>Posted By: {article.author}</h6>
+      </div>
+    );
+  });
 };

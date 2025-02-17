@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getArticles } from "./server";
 import { Header } from "./Header";
 import { Articles } from "./Article";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -26,20 +27,9 @@ function App() {
   return (
     <>
       <Header />
-      <div>
-        {articles.map((article) => {
-          return (
-            <Articles
-              key={article.article_id}
-              article_id={article.article_id}
-              article_img={article.article_img_url}
-              author={article.author}
-              topic={article.topic}
-              title={article.title}
-            />
-          );
-        })}
-      </div>
+      <Routes>
+        <Route path="/" element={<Articles articles={articles} />} />
+      </Routes>
     </>
   );
 }
