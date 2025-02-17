@@ -13,7 +13,15 @@ function App() {
     });
   }, []);
   if (!articles.length) {
-    return <p>Loading... please wait up to 30 seconds</p>;
+    return (
+      <>
+        <Header />
+        <div className="loading-screen">
+          <p>Loading... please wait up to 30 seconds</p>
+        </div>
+        ;
+      </>
+    );
   }
   return (
     <>
@@ -22,6 +30,7 @@ function App() {
         {articles.map((article) => {
           return (
             <Articles
+              key={article.article_id}
               article_id={article.article_id}
               article_img={article.article_img_url}
               author={article.author}
