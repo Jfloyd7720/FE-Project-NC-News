@@ -8,3 +8,11 @@ export const getArticles = () => {
     return data;
   });
 };
+
+export const incVotes = (id) => {
+  console.log(id);
+  return newsAPI.patch(`articles/${id}`, { inc_votes: 1 }).then((data) => {
+    console.log(data);
+    return data;
+  });
+};

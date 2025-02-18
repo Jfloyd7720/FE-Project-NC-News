@@ -96,3 +96,6 @@ nav {
   align-items: baseline;
   display: flex;
 }
+.likes {
+  display: flex;
+}

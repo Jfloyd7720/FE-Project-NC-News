@@ -18,7 +18,10 @@ export const CommentSection = ({ id }) => {
           <div>
             <p>{comment.body}</p>
             <h5>{comment.author}</h5>
-            <button>Like</button>
+            <div className="likes">
+              <button>Like</button>
+              <p>votes: {comment.votes}</p>
+            </div>
             <button>Reply to Comment</button>
           </div>
         );
