@@ -3,9 +3,6 @@ import { useEffect } from "react";
 import { Link } from "react-router";
 
 export const AllArticles = ({ articles }) => {
-  useEffect(() => {
-    console.log("refresh");
-  }, [articles]);
   return articles.map((article) => {
     return (
       <div className="all-articles-container" key={article.article_id}>
