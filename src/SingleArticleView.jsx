@@ -25,6 +25,10 @@ export const SingleArticleView = () => {
           {data.topic}: {data.title}
         </h2>
         <img src={data.article_img_url} alt="" />
+        <div className="likes">
+          <h4>{data.votes} Likes </h4>
+          <button>Like</button>
+        </div>
         <p>{data.body}</p>
         <CommentSection id={{ id }} />
       </div>
