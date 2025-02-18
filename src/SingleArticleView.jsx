@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { newsAPI } from "./server";
+import { CommentSection } from "./CommentSectiom";
 
 export const SingleArticleView = () => {
   const [data, setData] = useState({});
@@ -25,31 +26,7 @@ export const SingleArticleView = () => {
         </h2>
         <img src={data.article_img_url} alt="" />
         <p>{data.body}</p>
-        <div>
-          <p>this is a comment</p>
-          <button>Like</button>
-          <button>Reply to Comment</button>
-        </div>
-        <div>
-          <p>this is a comment</p>
-          <button>Like</button>
-          <button>Reply to Comment</button>
-        </div>
-        <div>
-          <p>this is a comment</p>
-          <button>Like</button>
-          <button>Reply to Comment</button>
-        </div>
-        <div>
-          <p>this is a comment</p>
-          <button>Like</button>
-          <button>Reply to Comment</button>
-        </div>
-
-        <form className="add-comment" action="">
-          <input type="text" placeholder="Write a commennt here" />
-          <button>Add Comment</button>
-        </form>
+        <CommentSection />
       </div>
     </div>
   );

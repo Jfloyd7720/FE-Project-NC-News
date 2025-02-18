@@ -62,16 +62,37 @@ nav {
 .searchBar {
   text-align: center;
   padding: 30px;
+  padding-top: 0px;
 }
 
-.searchBar input,
-.add-comment input {
+.searchBar input {
   text-align: center;
   padding: 5px;
   border-radius: 10px;
+  width: 50%;
+}
+
+.add-comment input {
+  text-align: left;
+
+  padding: 5px;
+  padding-bottom: 30px;
+  border-radius: 10px;
   width: 60%;
+}
+.add-comment button {
+  width: 20%;
+  align-self: baseline;
 }
 
 .main-article-container {
   padding: 10%;
+}
+.comment-section-container {
+  border: 2px solid #003566;
+  padding: 25px;
+}
+.add-comment {
+  align-items: baseline;
+  display: flex;
 }
