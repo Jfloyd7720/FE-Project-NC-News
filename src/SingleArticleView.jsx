@@ -26,7 +26,7 @@ export const SingleArticleView = () => {
         </h2>
         <img src={data.article_img_url} alt="" />
         <p>{data.body}</p>
-        <CommentSection />
+        <CommentSection id={{ id }} />
       </div>
     </div>
   );
