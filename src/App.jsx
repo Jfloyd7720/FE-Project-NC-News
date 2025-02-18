@@ -2,7 +2,9 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { getArticles } from "./server";
 import { Header } from "./Header";
-import { Articles } from "./Article";
+import { AllArticles } from "./AllArticles";
+import { Routes, Route } from "react-router-dom";
+import { SingleArticleView } from "./SingleArticleView";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -26,20 +28,13 @@ function App() {
   return (
     <>
       <Header />
-      <div>
-        {articles.map((article) => {
-          return (
-            <Articles
-              key={article.article_id}
-              article_id={article.article_id}
-              article_img={article.article_img_url}
-              author={article.author}
-              topic={article.topic}
-              title={article.title}
-            />
-          );
-        })}
-      </div>
+      <Routes>
+        <Route path="/" element={<AllArticles articles={articles} />} />
+        <Route
+          path="article/:id"
+          element={<SingleArticleView articles={articles} />}
+        />
+      </Routes>
     </>
   );
 }
