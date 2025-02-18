@@ -1,6 +1,11 @@
+import { useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router";
 
 export const AllArticles = ({ articles }) => {
+  useEffect(() => {
+    console.log("refresh");
+  }, [articles]);
   return articles.map((article) => {
     return (
       <div className="all-articles-container" key={article.article_id}>
@@ -12,7 +17,6 @@ export const AllArticles = ({ articles }) => {
         <img src={article.article_img_url} alt="" />
         <div>
           <h4>{article.votes} Likes</h4>
-          <button>Like</button>
         </div>
         <h6>Posted By: {article.author}</h6>
       </div>

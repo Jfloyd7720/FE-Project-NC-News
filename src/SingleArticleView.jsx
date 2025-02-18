@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { newsAPI } from "./server";
 import { CommentSection } from "./CommentSectiom";
+import { incVotes } from "./server";
 
 export const SingleArticleView = () => {
   const [data, setData] = useState({});
@@ -27,7 +28,13 @@ export const SingleArticleView = () => {
         <img src={data.article_img_url} alt="" />
         <div className="likes">
           <h4>{data.votes} Likes </h4>
-          <button>Like</button>
+          <button
+            onClick={() => {
+              incVotes(id);
+            }}
+          >
+            Like
+          </button>
         </div>
         <p>{data.body}</p>
         <CommentSection id={{ id }} />
