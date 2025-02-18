@@ -2,8 +2,9 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import { getArticles } from "./server";
 import { Header } from "./Header";
-import { Articles } from "./Article";
+import { AllArticles } from "./AllArticles";
 import { Routes, Route } from "react-router-dom";
+import { SingleArticleView } from "./SingleArticleView";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -28,7 +29,11 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Articles articles={articles} />} />
+        <Route path="/" element={<AllArticles articles={articles} />} />
+        <Route
+          path="article/:id"
+          element={<SingleArticleView articles={articles} />}
+        />
       </Routes>
     </>
   );
