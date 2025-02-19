@@ -4,6 +4,13 @@ import { useEffect } from "react";
 import { newsAPI } from "./server";
 
 export const CommentSection = ({ id }) => {
+  const [tempComment, setTempComment] = useState("");
+
+  const postComment = (e) => {
+    e.preventDefault();
+    console.log("hello");
+    setTempComment("");
+  };
   const [comments, setComments] = useState([]);
   useEffect(() => {
     newsAPI.get(`articles/${id.id}/comments`).then((res) => {
@@ -27,8 +34,22 @@ export const CommentSection = ({ id }) => {
         );
       })}
       <form className="add-comment" action="">
-        <input type="text" placeholder="Write a commennt here" />
-        <button>Add Comment</button>
+        <input
+          type="text"
+          placeholder="Write a commennt here"
+          value={tempComment}
+          onChange={(e) => {
+            setTempComment(e.target.value);
+          }}
+        />
+        <button
+          type="button"
+          onClick={(e) => {
+            postComment(e);
+          }}
+        >
+          Add Comment
+        </button>
       </form>
     </div>
   );
