@@ -9,6 +9,14 @@ export const CommentSection = ({ id }) => {
   const postComment = (e) => {
     e.preventDefault();
     console.log("hello");
+    newsAPI
+      .post(`articles/${id.id}/comments`, {
+        author: "jessjelly",
+        body: tempComment,
+      })
+      .then((res) => {
+        alert("comment posted successfully");
+      });
     setTempComment("");
   };
   const [comments, setComments] = useState([]);
@@ -16,20 +24,19 @@ export const CommentSection = ({ id }) => {
     newsAPI.get(`articles/${id.id}/comments`).then((res) => {
       setComments(res.data);
     });
-  }, []);
+  }, [tempComment]);
 
   return (
     <div className="comment-section-container">
       {comments.map((comment) => {
         return (
-          <div>
+          <div className="comment">
             <p>{comment.body}</p>
             <h5>{comment.author}</h5>
             <div className="likes">
               <button>Like</button>
               <p>votes: {comment.votes}</p>
             </div>
-            <button>Reply to Comment</button>
           </div>
         );
       })}

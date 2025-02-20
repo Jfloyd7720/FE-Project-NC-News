@@ -11,7 +11,7 @@ export const getArticles = () => {
 
 export const incVotes = (id) => {
   console.log(id);
-  return newsAPI.patch(`articles/${id}`, { inc_votes: 1 }).then((data) => {
+  return newsAPI.patch(`/articles/${id}`, { inc_votes: 1 }).then((data) => {
     console.log(data);
     return data;
   });
