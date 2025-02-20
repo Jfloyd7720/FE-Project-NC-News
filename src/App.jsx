@@ -5,6 +5,7 @@ import { Header } from "./Header";
 import { AllArticles } from "./AllArticles";
 import { Routes, Route } from "react-router-dom";
 import { SingleArticleView } from "./SingleArticleView";
+import { Topics } from "./Topics";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -34,6 +35,7 @@ function App() {
           path="article/:id"
           element={<SingleArticleView articles={articles} />}
         />
+        <Route path="topics" element={<Topics articles={articles} />} />
       </Routes>
     </>
   );

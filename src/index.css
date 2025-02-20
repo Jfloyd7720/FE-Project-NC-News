@@ -99,3 +99,7 @@ nav {
 .likes {
   display: flex;
 }
+.comment {
+  border: 2px solid #003566;
+  padding: 25px;
+}
