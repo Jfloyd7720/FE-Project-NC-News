@@ -7,6 +7,7 @@ export const CommentSection = ({ id }) => {
   const [tempComment, setTempComment] = useState("");
   const deleteComment = (id) => {
     newsAPI.delete(`comments/${id}`).then((res) => {
+      setTempComment("");
       alert("comment posted successfully");
     });
   };
@@ -22,7 +23,7 @@ export const CommentSection = ({ id }) => {
         console.log(res);
         alert("comment posted successfully");
       });
-    setTempComment("");
+    setTempComment(" ");
   };
   const [comments, setComments] = useState([]);
   useEffect(() => {
