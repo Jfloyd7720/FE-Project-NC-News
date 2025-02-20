@@ -6,6 +6,7 @@ import { AllArticles } from "./AllArticles";
 import { Routes, Route } from "react-router-dom";
 import { SingleArticleView } from "./SingleArticleView";
 import { Topics } from "./Topics";
+import { Topic } from "./Topic";
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -35,6 +36,7 @@ function App() {
           path="article/:id"
           element={<SingleArticleView articles={articles} />}
         />
+        <Route path="topics/:topic" element={<Topic articles={articles} />} />
         <Route path="topics" element={<Topics articles={articles} />} />
       </Routes>
     </>
