@@ -5,7 +5,11 @@ import { newsAPI } from "./server";
 
 export const CommentSection = ({ id }) => {
   const [tempComment, setTempComment] = useState("");
-
+  const deleteComment = (id) => {
+    newsAPI.delete(`comments/${id}`).then((res) => {
+      alert("comment posted successfully");
+    });
+  };
   const postComment = (e) => {
     e.preventDefault();
     console.log("hello");
@@ -15,6 +19,7 @@ export const CommentSection = ({ id }) => {
         body: tempComment,
       })
       .then((res) => {
+        console.log(res);
         alert("comment posted successfully");
       });
     setTempComment("");
@@ -30,12 +35,21 @@ export const CommentSection = ({ id }) => {
     <div className="comment-section-container">
       {comments.map((comment) => {
         return (
-          <div className="comment">
+          <div key={comment.comment_id} className="comment">
             <p>{comment.body}</p>
             <h5>{comment.author}</h5>
             <div className="likes">
               <button>Like</button>
               <p>votes: {comment.votes}</p>
+              {comment.author == "jessjelly" && (
+                <button
+                  onClick={() => {
+                    deleteComment(comment.comment_id);
+                  }}
+                >
+                  delete
+                </button>
+              )}
             </div>
           </div>
         );
