@@ -1,11 +1,278 @@
-.all-articles-container {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  padding: 10%;
+/* General Layout */
+.topics {
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
-img {
+/* Headings */
+.topics h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.topics h2 {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+  font-weight: normal;
+}
+
+/* Topic List */
+.topics-list {
+  display: flex;
+
+  justify-items: center;
+}
+
+/* Topic Card */
+.topic-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  margin: 10px;
+  display: block;
 }
-.loading-screen {
-  text-align: center;
+
+.topic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* Link Styling */
+.topic-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.topic-link:hover .topic-title {
+  color: #0056b3;
+}
+
+/* Topic Title */
+.topic-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+  text-transform: capitalize;
+}
+
+/* Topic Description */
+.topic-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .topics h1 {
+    font-size: 32px;
+  }
+
+  .topics h2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topic-card {
+    padding: 15px;
+  }
+
+  .topic-title {
+    font-size: 20px;
+  }
+
+  .topic-description {
+    font-size: 14px;
+  }
+}
+/* General Comment Section Container */
+.comment-section-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Comment Form */
+.add-comment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.add-comment input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.add-comment button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-comment button:hover {
+  background-color: #0056b3;
+}
+
+/* Individual Comment Card */
+.comment-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.comment-card:hover {
+  transform: translateY(-5px); /* Lifts the card slightly on hover */
+}
+
+.comment-card p {
+  font-size: 16px;
+  color: #333;
+}
+
+.comment-card h5 {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Comment Action Buttons (Like & Delete) */
+.comment-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comment-actions button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.comment-actions button:hover {
+  background-color: white;
+}
+
+.comment-actions button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Styling for Delete Button */
+.comment-actions button:last-child {
+  background-color: rgb(231, 61, 61);
+}
+
+.comment-actions button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .comment-section-container {
+    padding: 15px;
+  }
+
+  .add-comment input,
+  .add-comment button {
+    font-size: 14px;
+  }
+
+  .comment-card {
+    padding: 12px;
+  }
+
+  .comment-actions button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+/* General Container */
+
+/* Search Bar */
+.searchBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.searchBar input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 50%;
+}
+
+.searchBar button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 16px;
+}
+
+.searchBar button:hover {
+  background-color: #0056b3;
+}
+
+/* Article Title and Image */
+
+/* Likes Section */
+.likes {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.likes h4 {
+  font-size: 18px;
+  margin-right: 15px;
+  color: #555;
+}
+
+.likes button {
+  padding: 8px 12px;
+  background-color: white;
+  border: none;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Article Body */

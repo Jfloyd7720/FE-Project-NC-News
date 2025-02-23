@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { newsAPI } from "./server";
 import { CommentSection } from "./CommentSectiom";
 import { incVotes } from "./server";
+import { FaThumbsUp } from "react-icons/fa";
 
 export const SingleArticleView = () => {
   const [data, setData] = useState({});
@@ -33,6 +34,7 @@ export const SingleArticleView = () => {
               incVotes(id);
             }}
           >
+            <FaThumbsUp style={{ color: "#007bff", marginRight: "5px" }} />
             Like
           </button>
         </div>

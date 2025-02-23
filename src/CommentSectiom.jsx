@@ -1,21 +1,25 @@
 import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { newsAPI } from "./server";
+import { FaThumbsUp } from "react-icons/fa"; // Import the "Like" icon from react-icons
 
 export const CommentSection = ({ id }) => {
   const [comments, setComments] = useState([]);
-  newsAPI.get(`articles/${id.id}/comments`).then((res) => {
-    setComments(res.data);
-  });
   const [tempComment, setTempComment] = useState("");
+
+  useEffect(() => {
+    newsAPI.get(`articles/${id.id}/comments`).then((res) => {
+      setComments(res.data);
+    });
+  }, [id]);
+
   const deleteComment = (id) => {
     newsAPI.delete(`comments/${id}`).then((res) => {
-      alert("comment posted successfully");
+      alert("Comment deleted successfully");
     });
-    setTempComment("");
-    setComments((prev) => prev.filter((comment) => comment.comment_id != id));
+    setComments((prev) => prev.filter((comment) => comment.comment_id !== id));
   };
+
   const postComment = (e) => {
     e.preventDefault();
     newsAPI
@@ -24,63 +28,52 @@ export const CommentSection = ({ id }) => {
         body: tempComment,
       })
       .then((res) => {
-        setComments((prev) => {
-          return [
-            ...prev,
-            {
-              author: "jessjelly",
-              body: tempComment,
-              votes: 0,
-              comment_id: res.data.comment_id,
-            },
-          ];
-        });
-        alert("comment posted successfully");
+        setComments((prev) => [
+          ...prev,
+          {
+            author: "jessjelly",
+            body: tempComment,
+            votes: 0,
+            comment_id: res.data.comment_id,
+          },
+        ]);
+        alert("Comment posted successfully");
         setTempComment("");
       });
   };
 
   return (
     <div className="comment-section-container">
-      <form className="add-comment" action="">
+      <form className="add-comment" onSubmit={postComment}>
         <input
           type="text"
-          placeholder="Write a commennt here"
+          placeholder="Write a comment here"
           value={tempComment}
           onChange={(e) => {
             setTempComment(e.target.value);
           }}
         />
-        <button
-          type="button"
-          onClick={(e) => {
-            postComment(e);
-          }}
-        >
-          Add Comment
-        </button>
+        <button type="submit">Add Comment</button>
       </form>
-      {comments.map((comment) => {
-        return (
-          <div key={comment.comment_id} className="comment">
-            <p>{comment.body}</p>
-            <h5>{comment.author}</h5>
-            <div className="likes">
-              <button>Like</button>
-              <p>votes: {comment.votes}</p>
-              {comment.author == "jessjelly" && (
-                <button
-                  onClick={() => {
-                    deleteComment(comment.comment_id);
-                  }}
-                >
-                  delete
-                </button>
-              )}
-            </div>
+      {comments.map((comment) => (
+        <div key={comment.comment_id} className="comment-card">
+          <p>{comment.body}</p>
+          <h5>{comment.author}</h5>
+          <div className="comment-actions">
+            {/* Replace "Like" button with the FaThumbsUp icon */}
+            <button>
+              <FaThumbsUp style={{ color: "#007bff", marginRight: "5px" }} />
+              Like
+            </button>
+            <p>Likes: {comment.votes}</p>
+            {comment.author === "jessjelly" && (
+              <button onClick={() => deleteComment(comment.comment_id)}>
+                Delete
+              </button>
+            )}
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 };
