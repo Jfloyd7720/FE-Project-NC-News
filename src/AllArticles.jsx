@@ -37,23 +37,24 @@ export const AllArticles = ({ articles }) => {
           <option value="votes">Sort by Votes</option>
         </select>
       </div>
-
-      {sortedArticles.map((article) => {
-        return (
-          <div className="all-articles-container" key={article.article_id}>
-            <Link to={`article/${article.article_id}`}>
-              <h4>
-                {article.topic}: {article.title}
-              </h4>
-            </Link>
-            <img src={article.article_img_url} alt="" />
-            <div>
-              <h4>{article.votes} Likes</h4>
+      <div className="a-container">
+        {sortedArticles.map((article) => {
+          return (
+            <div className="all-articles-container" key={article.article_id}>
+              <Link to={`article/${article.article_id}`}>
+                <h4>
+                  {article.topic}: {article.title}
+                </h4>
+              </Link>
+              <img src={article.article_img_url} alt="" />
+              <div>
+                <h4>{article.votes} Likes</h4>
+              </div>
+              <h6>Posted By: {article.author}</h6>
             </div>
-            <h6>Posted By: {article.author}</h6>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

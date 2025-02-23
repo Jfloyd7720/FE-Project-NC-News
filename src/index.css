@@ -1,36 +1,33 @@
 * {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 #root {
   width: 100%;
 }
 
-/* Header container */
 header {
-  width: 100%; /* Ensure header spans full width of the page */
-  padding: 20px;
-  background-color: #007bff;
+  width: 100%;
+  padding: 40px;
+  background-color: #0056b3;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box; /* Include padding and borders in width */
+  box-sizing: border-box;
 }
 
-/* Header title */
 header h1 {
   font-size: 28px;
   font-weight: bold;
   margin: 0;
 }
 
-/* Navigation Links container */
 nav {
   display: flex;
-  gap: 20px; /* Space out the navigation links */
+  gap: 20px;
 }
 
-/* Individual Links */
 nav a {
   color: white;
   text-decoration: none;
@@ -44,7 +41,6 @@ nav a:hover {
   background-color: #0056b3; /* Change on hover for a better user experience */
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   header {
     flex-direction: column; /* Stack the header elements vertically */
@@ -74,22 +70,23 @@ nav a:hover {
   padding-top: 0px;
 }
 
-/* Article Card */
 .article-card {
-  width: 30%;
-  background-color: #f9f9f9;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 28%;
+  text-align: left;
   transition: all 0.3s ease-in-out;
+  margin: 10px;
+  display: block;
+  align-items: center;
 }
 .article-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Article Link */
 .article-link {
   text-decoration: none;
   color: #333;
@@ -97,18 +94,16 @@ nav a:hover {
 
 .article-title {
   font-size: 18px;
-  margin: 15px;
+
   font-weight: bold;
 }
 
-/* Image */
 .article-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-/* Votes Section */
 .article-votes {
   text-align: center;
   margin: 10px 0;
@@ -116,7 +111,6 @@ nav a:hover {
   color: #888;
 }
 
-/* Author Section */
 .article-author {
   font-size: 14px;
   color: #555;
@@ -124,38 +118,12 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .article-card {
-    width: 48%;
+    width: 108%;
   }
 }
-/* General Container */
-.all-articles-container {
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  transition: transform 0.2s ease;
-}
 
-.all-articles-container:hover {
-  transform: translateY(-5px);
-}
-
-.all-articles-container img {
-  width: 100%;
-  max-width: 500px;
-  height: fit-content;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Article Title */
 .all-articles-container h4 {
   font-size: 20px;
   font-weight: 600;
@@ -174,9 +142,7 @@ nav a:hover {
   margin-top: 5px;
   margin-bottom: 35px;
 }
-
-/* Sorting Dropdown */
-.select-container {
+*/ .select-container {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -197,24 +163,6 @@ select:focus {
   outline: none;
 }
 
-/* Vote Count Section */
-.all-articles-container .votes-section {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-}
-
-.all-articles-container .votes-section h4 {
-  font-size: 16px;
-  color: #888;
-  margin-right: 10px;
-}
-
-.all-articles-container .votes-section h4 span {
-  font-weight: bold;
-  color: #007bff;
-}
-
 @media (max-width: 480px) {
   .all-articles-container {
     width: 90%;
@@ -230,7 +178,6 @@ select:focus {
   }
 }
 
-/* General Container */
 .main-article-container {
   padding: 20px;
   max-width: 1200px;
@@ -238,7 +185,6 @@ select:focus {
   font-family: "Arial", sans-serif;
 }
 
-/* Search Bar */
 .searchBar {
   display: flex;
   justify-content: center;
@@ -268,7 +214,6 @@ select:focus {
   background-color: #0056b3;
 }
 
-/* Article Title and Image */
 .main-article-container h2 {
   font-size: 32px;
   font-weight: 600;
@@ -278,16 +223,17 @@ select:focus {
 
 .main-article-container img {
   width: 100%;
-  max-height: 500px;
+  max-width: 800px;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+
   object-fit: cover;
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Likes Section */
-
-/* Article Body */
 .main-article-container p {
   font-size: 18px;
   line-height: 1.6;
@@ -295,7 +241,6 @@ select:focus {
   margin-bottom: 40px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .searchBar input {
     width: 70%;
@@ -329,5 +274,95 @@ select:focus {
 
   .likes button {
     padding: 6px 10px;
+  }
+}
+
+.all-articles-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  margin: 10px;
+  display: block;
+}
+
+.all-articles-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.all-articles-container h4 {
+  text-align: center;
+
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.all-articles-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.all-articles-container h6 {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.all-articles-container select {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.all-articles-container select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.a-container {
+  display: flex;
+
+  justify-content: center;
+}
+
+.a-container .all-articles-container {
+  width: 30%;
+}
+
+@media (max-width: 768px) {
+  .all-articles-container h4 {
+    font-size: 20px;
+  }
+
+  .all-articles-container img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .a-container .all-articles-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-articles-container {
+    padding: 10px;
+  }
+
+  .all-articles-container h4 {
+    font-size: 14px;
+  }
+
+  .a-container .all-articles-container {
+    width: 100%;
   }
 }
