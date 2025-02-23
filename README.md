@@ -38,9 +38,12 @@ Node.js version 14 or higher.
 Step 1: Clone the Repository
 First, clone the repository to your local machine:
 git clone https://github.com/Jfloyd7720/FE-Project-NC-News
+
 Step 2: Install Dependencies
 Navigate to the project folder and run npm install
+
 Step 3: Run the Project
+
 Once all dependencies are installed, you can run the project locally: npm run dev
 This will start the React development server, and you can access the app at http://localhost:3000.
 
