@@ -1,50 +1,57 @@
-Northcoders News
+# Northcoders News
 
-Northcoders News is a social news aggregation platform where users can read, rate, and discuss articles based on various topics. It allows users to upvote and downvote articles, leave comments, and engage with other users' opinions. Built using React and deployed on Netlify, this project connects with a back-end API to fetch data and handle user interactions.
+Northcoders News is a social news aggregation platform where users can read, rate, and discuss articles on various topics. It allows users to upvote and downvote articles, leave comments, and engage with other users' opinions. The project is built using **React** and deployed on **Netlify**, connecting to a back-end API for data retrieval and user interactions.
 
-🔗 Deployed Version
+## 🔗 Live Demo
 
-You can check out the live version of Northcoders News here:
-https://ncnewsite.netlify.app
+Check out the deployed version of Northcoders News here:  
+[Northcoders News](https://ncnewsite.netlify.app)
 
-📦 Technologies Used
+## 📦 Technologies Used
 
-React: JavaScript library for building user interfaces.
-Netlify: For deploying the front end.
-PostgreSQL: Database for storing article, user, and comment data.
+- **React** – JavaScript library for building user interfaces
+- **Netlify** – For front-end deployment
+- **PostgreSQL** – Database for storing articles, users, and comments
 
-💡 About the Project
+## 💡 Features
 
-Northcoders News is a social news aggregation platform where users can:
+- Browse articles sorted by topics
+- Upvote and downvote articles
+- Leave comments to engage in discussions
+- View aggregated ratings based on user feedback
+- Intuitive and user-friendly interface
 
-Browse articles sorted by topics.
-Rate articles with upvotes and downvotes.
-Leave comments on articles to engage in discussions.
-View aggregated ratings based on user feedback.
-The project is designed to be intuitive, with a user-friendly interface that allows for easy navigation through various articles and topics.
+## ⚙️ Backend Repository
 
-⚙️ Backend Repository
+The back-end API powering this application can be found here:  
+[Northcoders News API](https://northcoders-news-api-4aqk.onrender.com/)
 
-The back-end API that powers this application can be found here:
-https://northcoders-news-api-4aqk.onrender.com/
+## 🛠️ Prerequisites
 
-🛠️ Prerequisites
+Before running the project locally, ensure you have:
 
-To run the project locally, you will need the following:
-Node.js version 14 or higher.
+- **Node.js** (version 14 or higher) installed
 
-🚀 Running the Project Locally
+## 🚀 Running the Project Locally
 
-Step 1: Clone the Repository
-First, clone the repository to your local machine:
-git clone https://github.com/Jfloyd7720/FE-Project-NC-News
+### Step 1: Clone the Repository
 
-Step 2: Install Dependencies
-Navigate to the project folder and run npm install
+git clone https://github.com/Jfloyd7720/FE-Project-NC-News  
+cd FE-Project-NC-News
 
-Step 3: Run the Project
+### Step 2: Install Dependencies
 
-Once all dependencies are installed, you can run the project locally: npm run dev
-This will start the React development server, and you can access the app at http://localhost:3000.
+npm install
 
-This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
+### Step 3: Run the Project
+
+npm run dev
+
+This will start the React development server. You can access the app at:  
+http://localhost:3000
+
+## 📚 About This Project
+
+This portfolio project was created as part of a **Digital Skills Bootcamp in Software Engineering** provided by **Northcoders**.
+
+---
